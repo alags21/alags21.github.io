@@ -216,14 +216,12 @@
 
       <div class="pf-subhead">Description</div>
       <p>
-        A full-stack web app built with Django that lets users browse a 
-        movie catalog, create accounts, leave and moderate reviews, and 
-        manage a shopping cart to purchase movies.
+        Movies Store is a full-stack web application built with Django that lets users browse and search a catalog of movies, view individual movie pages, and manage a shopping cart to purchase titles, with orders tracked per user. Registered users can sign up, log in, and leave reviews on any movie, with full control to edit, delete, or report their own reviews. The app follows a modular Django architecture, with separate apps for accounts, movies, and cart, backed by a relational schema linking users to their orders, cart items, and reviews.
       </p>
 
       <div class="pf-subhead">Process</div>
       <p>
-       Movies Store is a full-stack web application built with Django that lets users browse and search a catalog of movies, view individual movie pages, and manage a shopping cart to purchase titles, with orders tracked per user. Registered users can sign up, log in, and leave reviews on any movie, with full control to edit, delete, or report their own reviews. The app follows a modular Django architecture, with separate apps for accounts, movies, and cart, backed by a relational schema linking users to their orders, cart items, and reviews.
+       I documented this build end-to-end — screen recordings and a running logbook tracking every feature from first commit to deploy. Started with the home page and base templates to lock in the layout, then moved into the data layer, designing and implementing the Django models for movies, accounts, and orders before touching a single form. From there I layered in more frontend — movie listing and detail pages, search, review UI — wiring each piece to a working backend as I went instead of building either layer in isolation. Cart and order functionality came next: session-backed carts, checkout flow, and order history tied to authenticated users. Once the core flows were solid, I added user-facing review management (create, edit, delete, report) and hardened access control with @login_required checks throughout. Final step was shipping it — configuring settings for production and deploying live on PythonAnywhere, closing the loop from local runserver to a real public URL.
       </p>
 
       <div class="pf-subhead">Video Demo</div>
