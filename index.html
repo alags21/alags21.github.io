@@ -1,6 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[Your Name] — Portfolio</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <style>
-  .pf-root {
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #0d0b08;
+    color: #f1ece1;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.65;
+  }
+  :root {
     --bg: #0d0b08;
     --bg-alt: #17140f;
     --card: #18150f;
@@ -11,247 +26,227 @@
     --radius: 10px;
     --font-display: "Fraunces", Georgia, "Times New Roman", serif;
     --font-mono: "IBM Plex Mono", "SFMono-Regular", Consolas, Menlo, monospace;
-    --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    font-family: var(--font-body);
-    line-height: 1.65;
-    margin: 0;
-    padding: 0;
   }
-  .pf-root * { box-sizing: border-box; }
   .pf-wrap { max-width: 760px; margin: 0 auto; padding: 72px 24px 96px; }
 
   .pf-eyebrow {
     font-family: var(--font-mono);
     font-size: 0.78rem;
-    letter-
+    letter-spacing: 0.02em;
     color: var(--accent);
-    margin:
+    margin: 0 0 10px;
   }
-  .pf-eyebrolor:var(--text-dim); }
+  .pf-eyebrow::before { content: "$ "; color: var(--text-dim); }
 
   /* ---------- HERO / ABOUT ---------- */
-  .pf-hero r-bottom:1px solid var(--border); margin-bottom: 56px; }
-  .pf-hero
+  .pf-hero { padding-bottom: 52px; border-bottom: 1px solid var(--border); margin-bottom: 56px; }
+  .pf-hero h1 {
     font-family: var(--font-display);
-    font-si);
+    font-size: clamp(2.4rem, 6vw, 3.4rem);
     font-weight: 600;
-    margin:
+    margin: 0 0 6px;
     color: var(--text);
-    text-wr
+    text-wrap: balance;
   }
-  .pf-hero
+  .pf-hero .pf-tagline {
     font-size: 1.1rem;
-    color:
+    color: var(--text-dim);
     margin: 0 0 26px;
-    font-st
+    font-style: italic;
     font-family: var(--font-display);
   }
   .pf-hero .pf-about {
-    max-wid
+    max-width: 62ch;
     margin: 0 0 28px;
-    color:
+    color: var(--text);
     font-size: 1.02rem;
   }
-  .pf-links { display: flex; gap: 10px; flex-wrap:
-wrap; }
+  .pf-links { display: flex; gap: 10px; flex-wrap: wrap; }
   .pf-links a {
-    color:
+    color: var(--accent);
     background: transparent;
-    border:
+    border: 1px solid var(--border);
     padding: 7px 16px;
-    border-
+    border-radius: 999px;
     text-decoration: none;
-    font-fa
+    font-family: var(--font-mono);
     font-weight: 500;
-    font-si
-    transition: border-color 0.15s ease, color 0.15s
-ease;
+    font-size: 0.82rem;
+    transition: border-color 0.15s ease, color 0.15s ease;
   }
-  .pf-links--accent); }
+  .pf-links a:hover { border-color: var(--accent); }
 
-  /* -------- */
+  /* ---------- SECTION HEADING ---------- */
   .pf-section-title {
-    font-fa
+    font-family: var(--font-mono);
     font-size: 0.78rem;
-    text-tr
+    text-transform: uppercase;
     letter-spacing: 0.12em;
-    color:
+    color: var(--text-dim);
     font-weight: 600;
-    margin-
+    margin-bottom: 28px;
   }
-  .pf-secti// "; color: var(--accent); }
+  .pf-section-title::before { content: "// "; color: var(--accent); }
 
-  /* ---------- PROJECT CARD (duplicate the
-.pf-project----------*/
-  .pf-proje
+  /* ---------- PROJECT CARD (duplicate the .pf-project block for each new project) ---------- */
+  .pf-project {
     background: var(--card);
-    border:
+    border: 1px solid var(--border);
     border-radius: var(--radius);
-    padding
+    padding: 32px;
     margin-bottom: 36px;
   }
   .pf-project h2 {
-    font-fa
+    font-family: var(--font-display);
     margin: 0 0 6px;
-    font-si
+    font-size: 1.55rem;
     font-weight: 600;
   }
-  .pf-tags { display: flex; gap: 8px; flex-wrap:
-wrap; margi
+  .pf-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
   .pf-tag {
-    font-fa
+    font-family: var(--font-mono);
     font-size: 0.72rem;
-    font-we
+    font-weight: 500;
     color: var(--text-dim);
-    backgro
+    background: var(--bg-alt);
     border: 1px solid var(--border);
-    padding
+    padding: 3px 10px;
     border-radius: 5px;
   }
   .pf-project-links { margin-bottom: 22px; }
-  .pf-proje
+  .pf-project-links a {
     color: var(--accent);
-    text-de
+    text-decoration: none;
     font-family: var(--font-mono);
-    font-we
+    font-weight: 500;
     font-size: 0.85rem;
-    margin-
+    margin-right: 18px;
     border-bottom: 1px solid transparent;
   }
-  .pf-project-links a:hover { border-bottom-color:
-var(--accen
+  .pf-project-links a:hover { border-bottom-color: var(--accent); }
 
-  .pf-subhe
+  .pf-subhead {
     font-family: var(--font-mono);
-    font-si
+    font-size: 0.72rem;
     text-transform: uppercase;
-    letter-
+    letter-spacing: 0.1em;
     color: var(--accent);
-    font-we
+    font-weight: 600;
     margin: 24px 0 8px;
   }
   .pf-subhead:first-of-type { margin-top: 0; }
-  .pf-proje:var(--text); }
+  .pf-project p { margin: 0 0 4px; color: var(--text); }
 
   /* ---------- VIDEO ---------- */
-  .pf-video
+  .pf-video-wrap {
     position: relative;
-    width:
+    width: 100%;
     padding-bottom: 56.25%; /* 16:9 */
-    height:
+    height: 0;
     border-radius: 8px;
-    overflo
+    overflow: hidden;
     background: var(--bg-alt);
-    margin-
+    margin-top: 6px;
     border: 1px solid var(--border);
   }
   .pf-video-wrap iframe {
-    positio
+    position: absolute;
     top: 0; left: 0;
-    width:
+    width: 100%; height: 100%;
     border: 0;
   }
 
-  /* ------
+  /* ---------- FOOTER ---------- */
   .pf-footer {
-    font-fa
+    font-family: var(--font-mono);
     text-align: left;
-    color:
+    color: var(--text-dim);
     font-size: 0.78rem;
-    margin-
+    margin-top: 60px;
     padding-top: 22px;
-    border-
+    border-top: 1px solid var(--border);
   }
 
   @media (max-width: 600px) {
-    .pf-wra}
+    .pf-wrap { padding: 48px 16px 64px; }
     .pf-project { padding: 22px; }
   }
 </style>
+</head>
+<body>
 
-<div class="pf-root">
-  <div clas
+  <div class="pf-wrap">
 
-    <!-- ==ME — fill in the blanks ================= -->
-    <div cl
+    <!-- ================= HERO / ABOUT ME — fill in the blanks ================= -->
+    <div class="pf-hero">
       <p class="pf-eyebrow">whoami</p>
-      <h1>[
-      <p class="pf-tagline">[Your Tagline — e.g. "CS
-Student & S
+      <h1>[Your Name]</h1>
+      <p class="pf-tagline">[Your Tagline — e.g. "CS Student &amp; Software Developer"]</p>
       <p class="pf-about">
-        [Wrelf: who you are, what you study/do,
-        whahat you'relooking for (internships,
-        colversationaland specific.]
+        [Write 2-4 sentences about yourself: who you are, what you study/do,
+        what you're interested in, and what you're looking for (internships,
+        collaborators, etc). Keep it conversational and specific.]
       </p>
       <div class="pf-links">
-        <ahref="mailto:YOUR_EMAIL@example.com">email</a>
-        <a _USERNAME"target="_blank" rel="noopener">github</a>
-        <ahref="https://linkedin.com/in/YOUR_USERNAME"
-target="_bl/a>
-        <a href="YOUR_RESUME_LINK" target="_blank"
-rel="noopen
+        <a href="mailto:YOUR_EMAIL@example.com">email</a>
+        <a href="https://github.com/YOUR_USERNAME" target="_blank" rel="noopener">github</a>
+        <a href="https://linkedin.com/in/YOUR_USERNAME" target="_blank" rel="noopener">linkedin</a>
+        <a href="YOUR_RESUME_LINK" target="_blank" rel="noopener">resume</a>
       </div>
     </div>
 
-    <p clascts/</p>
+    <p class="pf-section-title">ls projects/</p>
 
-    <!-- =============================== -->
-    <!-- PR between the markers below     -->
-    <!-- tohe copyright after this one.  -->
-    <!-- =============================== -->
-    <!-- ST
+    <!-- ============================================================ -->
+    <!-- PROJECT BLOCK — copy everything between the markers below     -->
+    <!-- to add another project. Paste the copy right after this one.  -->
+    <!-- ============================================================ -->
+    <!-- START PROJECT -->
     <div class="pf-project">
-      <h2>M
+      <h2>Movies Store</h2>
       <div class="pf-tags">
-        <spn>
+        <span class="pf-tag">Python</span>
         <span class="pf-tag">Django</span>
-        <spn>
+        <span class="pf-tag">SQLite</span>
         <span class="pf-tag">HTML/CSS</span>
-      </div
+      </div>
 
-      <div
-        <a href="YOUR_GITHUB_REPO_LINK"
-target="_blpo →</a>
-        <a href="YOUR_LIVE_DEMO_LINK"
-target="_bl →</a>
+      <div class="pf-project-links">
+        <a href="YOUR_GITHUB_REPO_LINK" target="_blank" rel="noopener">github repo &rarr;</a>
+        <a href="YOUR_LIVE_DEMO_LINK" target="_blank" rel="noopener">live demo &rarr;</a>
       </div>
 
       <div class="pf-subhead">Description</div>
       <p>
-        [What is this project? e.g. "A full-stack
-web app bui
-        that lets users browse a movie catalog,
-create acco
-        moderate reviews, and manage a shopping cart
-to purchase
+        [What is this project? e.g. "A full-stack web app built with Django
+        that lets users browse a movie catalog, create accounts, leave and
+        moderate reviews, and manage a shopping cart to purchase movies."
         Mention the core features.]
       </p>
 
-      <div iv>
+      <div class="pf-subhead">Process</div>
       <p>
-        [Holt as partof Georgia Tech's CS2340
-        coungo app. Idesigned the data models
-        forentedauthentication, and added a
-        repauthenticated users flag reviews.
-        TacY. Used Gitfor version control and
-        ite
+        [How did you build it? e.g. "Built as part of Georgia Tech's CS2340
+        coursework, extending a base Django app. I designed the data models
+        for accounts/movies/cart, implemented authentication, and added a
+        report-review feature that lets authenticated users flag reviews.
+        Tackled challenges around X and Y. Used Git for version control and
+        iterated in weekly sprints."]
       </p>
 
       <div class="pf-subhead">Video Demo</div>
-      <div
-        <!-- Replace YOUR_VIDEO_ID with your YouTube
-video ID --
-        <iframe
-src="https:VIDEO_ID"title="Movies Store Demo" allowfullscreen></iframe>
-      </div
+      <div class="pf-video-wrap">
+        <!-- Replace YOUR_VIDEO_ID with your YouTube video ID -->
+        <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="Movies Store Demo" allowfullscreen></iframe>
+      </div>
     </div>
-    <!-- EN
+    <!-- END PROJECT -->
 
-    <div cl
-      © [YEAR] [Your Name]
+    <div class="pf-footer">
+      &copy; [YEAR] [Your Name]
     </div>
 
   </div>
-</div>     
+
+</body>
+</html>
